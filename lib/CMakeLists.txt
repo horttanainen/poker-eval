@@ -54,8 +54,8 @@ set(
     ${LOWBALL_TABLES}
     )
 
-file( GLOB
-    POKER_EVAL_SOURCES
+file( 
+    GLOB POKER_EVAL_SOURCES
     combinations.c
     deck.c
     deck_astud.c
@@ -82,24 +82,20 @@ file(
     ${CMAKE_SOURCE_DIR}/include/*.h
     )
 
+include_directories(
+    ${CMAKE_SOURCE_DIR}/include
+    )
+
 add_library(
     ${PROJECT_NAME} SHARED
     ${LIBPOKER_INCLUDE_FILES}
     ${LIBPOKER_SOURCE_FILES}
     )
 
-target_include_directories(
-    ${PROJECT_NAME}
-    PUBLIC ${CMAKE_SOURCE_DIR}/include
-    )
-
 set_target_properties(
     ${PROJECT_NAME} 
     PROPERTIES LINKER_LANGUAGE CXX
     )
-
-#noinst_HEADERS = \
-#mktable.h
 
 file( GLOB
     MKTABLE_HELPERS
@@ -111,11 +107,6 @@ add_executable(
     mktab_basic
     mktab_basic.c
     ${MKTABLE_HELPERS}
-    )
-
-target_include_directories(
-    mktab_basic
-    PUBLIC ${CMAKE_SOURCE_DIR}/include
     )
 
 add_custom_command(
@@ -131,11 +122,6 @@ add_executable(
     ${MKTABLE_HELPERS}
     )
 
-target_include_directories(
-    mktab_joker
-    PUBLIC ${CMAKE_SOURCE_DIR}/include
-    )
-
 add_custom_command(
     OUTPUT ${JOKER_TABLES}
     COMMAND mktab_joker
@@ -147,11 +133,6 @@ add_executable(
     mktab_packed
     mktab_packed.c
     ${MKTABLE_HELPERS}
-    )
-
-target_include_directories(
-    mktab_packed
-    PUBLIC ${CMAKE_SOURCE_DIR}/include
     )
 
 add_custom_command(
@@ -167,11 +148,6 @@ add_executable(
     ${MKTABLE_HELPERS}
     )
 
-target_include_directories(
-    mktab_evx
-    PUBLIC ${CMAKE_SOURCE_DIR}/include
-    )
-
 add_custom_command(
     OUTPUT ${EVX_TABLES}
     COMMAND mktab_evx
@@ -183,11 +159,6 @@ add_executable(
     mktab_astud
     mktab_astud.c
     ${MKTABLE_HELPERS}
-    )
-
-target_include_directories(
-    mktab_astud
-    PUBLIC ${CMAKE_SOURCE_DIR}/include
     )
 
 add_custom_command(
@@ -203,11 +174,6 @@ add_executable(
     ${MKTABLE_HELPERS}
     )
 
-target_include_directories(
-    mktab_lowball
-    PUBLIC ${CMAKE_SOURCE_DIR}/include
-    )
-
 add_custom_command(
     OUTPUT ${LOWBALL_TABLES}
     COMMAND mktab_lowball
@@ -220,11 +186,6 @@ add_executable(
     evx_generate.c
     )
 
-target_include_directories(
-    evx_gen5
-    PUBLIC ${CMAKE_SOURCE_DIR}/include
-    )
-
 target_compile_options(
     evx_gen5
     PUBLIC "-DCARDS_DEALT=5"
@@ -233,11 +194,6 @@ target_compile_options(
 add_executable(
     evx_gen7
     evx_generate.c
-    )
-
-target_include_directories(
-    evx_gen7
-    PUBLIC ${CMAKE_SOURCE_DIR}/include
     )
 
 target_compile_options(
@@ -273,10 +229,3 @@ add_custom_command(
     DEPENDS evx_gen7 ${EVX_PREAMPLE_CFRAG}
     WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
     )
-
-#clean-local:
-#rm -f t_*.c
-#-rm -f *.gcov *.gcda *.gcno
-
-#libpoker_eval_la_LDFLAGS = -no-undefined -version-info 1:0:0
-
