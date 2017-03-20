@@ -1,0 +1,41 @@
+
+#ifndef WORDS_BIGENDIAN
+/* Define if your processor stores words with the most significant
+   byte first (like Motorola and SPARC, unlike Intel and VAX).  */
+#cmakedefine WORDS_BIGENDIAN 1
+#endif /* WORDS_BIGENDIAN */
+
+#ifndef HAVE_UINT64_T
+/* Define if your compiler supports "uint64_t" for 64 bit integers */
+#cmakedefine HAVE_UINT64_T 1
+#endif /* HAVE_UINT64_T */
+
+#ifndef HAVE_LONG_LONG
+/* Define if your compiler supports "long long" for 64 bit integers */
+#cmakedefine HAVE_LONG_LONG 1
+#endif /* HAVE_LONG_LONG */
+
+#ifndef HAVE_INT8
+/* Define if type "int8" is defined already */
+#cmakedefine HAVE_INT8 1
+#endif /* HAVE_INT8 */
+
+#ifndef SIZEOF_LONG
+/* The size of a `long', as computed by sizeof. */
+#cmakedefine SIZEOF_LONG @SIZEOF_LONG@
+#endif /* SIZEOF_LONG */
+
+#ifndef HAVE_INTTYPES_H
+/* Check if we have/need the inttypes include file */
+#cmakedefine HAVE_INTTYPES_H 1
+#endif /* HAVE_INTTYPES_H */
+
+#ifndef HAVE_STDINT_H
+/* Check if we have/need the stdint include file */
+#cmakedefine HAVE_STDINT_H 1
+#endif /* HAVE_STDINT_H */
+
+#ifndef HAVE_SYS_TYPES_H
+/* Check if we have/need the sys/types include file */
+#cmakedefine HAVE_SYS_TYPES_H 1
+#endif /* HAVE_SYS_TYPES_H */
