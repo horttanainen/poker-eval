@@ -27,12 +27,11 @@
 
 #if defined(_MSC_VER)
 #  define UINT64_TYPE unsigned __int64
-#  define inline __inline
 #  define thread __declspec( thread )
 #else
 #  define thread 
-#  include "poker_config.h"
 #endif
+#  include "poker_config.h"
 
 #ifdef HAVE_SYS_TYPES_H
 #  include <sys/types.h>

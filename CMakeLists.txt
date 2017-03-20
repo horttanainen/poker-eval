@@ -4,6 +4,7 @@ project( poker-eval VERSION 138.0 )
 add_definitions(
     -D_UNICODE
     -DUNICODE
+    -DHAVE_CONFIG_H
     )
 
 add_compile_options(
