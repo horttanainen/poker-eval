@@ -2,6 +2,7 @@ project(examples)
 
 include_directories(
     ${CMAKE_SOURCE_DIR}/include
+    ${libpoker_INCLUDE_DIRS}
     )
 
 add_executable(
@@ -27,6 +28,7 @@ target_link_libraries(
 add_executable(
     five_card_hands
     five_card_hands.c
+    getopt_w32.c
     )
 
 target_link_libraries(

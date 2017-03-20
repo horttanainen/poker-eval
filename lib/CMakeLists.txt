@@ -84,6 +84,7 @@ file(
 
 include_directories(
     ${CMAKE_SOURCE_DIR}/include
+    ${PROJECT_BINARY_DIR}
     )
 
 add_library(
@@ -92,9 +93,22 @@ add_library(
     ${LIBPOKER_SOURCE_FILES}
     )
 
+include (GenerateExportHeader)
+generate_export_header(
+    ${PROJECT_NAME}
+    BASE_NAME pokereval
+    )
+
 set_target_properties(
     ${PROJECT_NAME} 
     PROPERTIES LINKER_LANGUAGE CXX
+    )
+
+set(
+    ${PROJECT_NAME}_INCLUDE_DIRS
+    ${CMAKE_SOURCE_DIR}/include
+    ${PROJECT_BINARY_DIR}
+    CACHE INTERNAL "${PROJECT_NAME}: Include Directories" FORCE
     )
 
 file( GLOB

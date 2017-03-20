@@ -44,12 +44,14 @@ ENDIF(NOT DEFINED C_INLINE)
 
 include(TestBigEndian)
 test_big_endian(WORDS_BIGENDIAN)
-check_type_size( long SIZEOF_LONG)
+
 include(CheckIncludeFiles)
 check_include_files(inttypes.h HAVE_INTTYPES_H)
 check_include_files(unistd.h HAVE_UNISTD_H)
 check_include_files(sys/stat.h HAVE_SYS_STAT_H)
+
 include(CheckTypeSize)
-check_type_size( "long long" LONG_LONG LANGUAGE C )
-check_type_size( uint64_t UINT64_T LANGUAGE C)
-check_type_size( int8 INT8 LANGUAGE C)
+check_type_size( long SIZEOF_LONG)
+check_type_size( "long long" LONG_LONG )
+check_type_size( uint64_t UINT64_T )
+check_type_size( int8 INT8 )
