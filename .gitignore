@@ -1,0 +1,5 @@
+# configs produced by cmakelists.txt
+*config.h
+
+# test produced by cmakelists.txt
+/tests/run

@@ -40,7 +40,7 @@ StdDeck_StdRules_EVAL_X5 (StdDeck_RankMask clubs,
 
   switch (ranks)
     {
-    case 47:
+様様様様様様様様様様様様様様様様様様様様    case 47:
     case 55:
     case 59:
     case 61:
