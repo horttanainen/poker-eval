@@ -236,6 +236,7 @@ extern POKEREVAL_EXPORT char StdDeck_suitChars[StdDeck_Suit_LAST+1];
 
 extern POKEREVAL_EXPORT int StdDeck_cardToString(int cardIndex, char *outString);
 extern POKEREVAL_EXPORT int StdDeck_stringToCard(char *inString, int *outCard);
+extern POKEREVAL_EXPORT int StdDeck_maskToCards(void *cardMask, int cards[]);
 
 #define StdDeck_cardString(i) GenericDeck_cardString(&StdDeck, (i))
 #define StdDeck_printCard(i)  GenericDeck_printCard(&StdDeck, (i))

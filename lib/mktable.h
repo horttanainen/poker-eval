@@ -19,6 +19,9 @@
  * with this program in a file in the toplevel directory called "GPLv3".
  * If not, see <http://www.gnu.org/licenses/>.
  */
+#ifndef MKTABLE_H
+#define MKTABLE_H
+
 extern void
 MakeTable_begin(const char *tableName,
                 const char *fileName, 
@@ -58,3 +61,4 @@ extern uint32 bottom_card_func(uint32 arg);
 extern uint32 bottom_bit_func(uint32 arg);
 extern uint32 top_bit_func(uint32 arg);
 extern uint32 straight_func(uint32 arg);
+#endif /* MKTABLE_H */
