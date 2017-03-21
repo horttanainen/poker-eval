@@ -13,13 +13,13 @@ add_compile_options(
 
 include( cmake/SystemCheck.cmake )
 configure_file(
-    include/config.h.in 
-    ${CMAKE_SOURCE_DIR}/include/config.h 
+    poker-eval/config.h.in 
+    ${CMAKE_SOURCE_DIR}/poker-eval/config.h 
     )
 
 configure_file( 
-    include/poker_config.h.in 
-    ${CMAKE_SOURCE_DIR}/include/poker_config.h 
+    poker-eval/poker_config.h.in 
+    ${CMAKE_SOURCE_DIR}/poker-eval/poker_config.h 
     )
 
 configure_file(
@@ -28,7 +28,7 @@ configure_file(
     )
 
 add_subdirectory(
-    lib
+    poker-eval
     )
 
 add_subdirectory(

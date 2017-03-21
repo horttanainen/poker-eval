@@ -26,10 +26,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "poker_defs.h"
+#include "poker-eval/poker_defs.h"
 
-#include "inlines/eval.h"
-#include "inlines/eval_low.h"
+#include "poker-eval/inlines/eval.h"
+#include "poker-eval/inlines/eval_low.h"
 
 int gNCards;
 CardMask gCards;

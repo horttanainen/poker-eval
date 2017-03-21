@@ -23,8 +23,8 @@
 #include	<stdio.h>
 #include	<stdlib.h>
 #include	<signal.h>
-#include	"poker_defs.h"
-#include	"inlines/eval.h"
+#include	"poker-eval/poker_defs.h"
+#include	"poker-eval/inlines/eval.h"
 
 /* #define VERBOSE */
 

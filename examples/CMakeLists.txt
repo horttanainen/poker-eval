@@ -1,7 +1,6 @@
 project(examples)
 
 include_directories(
-    ${CMAKE_SOURCE_DIR}/include
     ${libpoker_INCLUDE_DIRS}
     )
 

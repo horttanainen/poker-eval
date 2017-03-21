@@ -84,8 +84,8 @@ $ pokenum -mc 10000 -l27 5h 4h 3h / 5s Qd - 9s 8h 6d / Ks Kh
 #include <stdlib.h>
 #include <errno.h>
 
-#include "poker_defs.h"
-#include "enumdefs.h"
+#include "poker-eval/poker_defs.h"
+#include "poker-eval/enumdefs.h"
 
 static int
 parseArgs(int argc, char **argv,

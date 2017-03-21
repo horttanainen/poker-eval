@@ -26,8 +26,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "poker_defs.h"
-#include "inlines/eval.h"
+#include "poker-eval/poker_defs.h"
+#include "poker-eval/inlines/eval.h"
 
 #define MAX_PLAYERS 22
 

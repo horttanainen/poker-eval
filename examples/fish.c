@@ -32,8 +32,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "poker_defs.h"
-#include "inlines/eval_type.h"
+#include "poker-eval/poker_defs.h"
+#include "poker-eval/inlines/eval_type.h"
 
 int gNCards, gNPegged, gNDead;
 CardMask gDeadCards, gPeggedCards;

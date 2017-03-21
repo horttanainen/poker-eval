@@ -28,14 +28,14 @@
 #define TEST_ASTUD
 #define TEST_OMAHA8
 
-#include "poker_defs.h"
+#include "poker-eval/poker_defs.h"
 
 #ifdef TEST_STD
-#include "inlines/eval.h"
-#include "inlines/eval_low.h"
-#include "inlines/eval_low8.h"
-#include "deck_std.h"
-#include "rules_std.h"
+#include "poker-eval/inlines/eval.h"
+#include "poker-eval/inlines/eval_low.h"
+#include "poker-eval/inlines/eval_low8.h"
+#include "poker-eval/deck_std.h"
+#include "poker-eval/rules_std.h"
 
 int 
 testStdDeck(const char *handstr) {
@@ -86,11 +86,11 @@ testStdDeck(const char *handstr) {
 #endif
 
 #ifdef TEST_JOKER
-#include "inlines/eval_joker.h"
-#include "inlines/eval_joker_low.h"
-#include "inlines/eval_joker_low8.h"
-#include "deck_joker.h"
-#include "rules_joker.h"
+#include "poker-eval/inlines/eval_joker.h"
+#include "poker-eval/inlines/eval_joker_low.h"
+#include "poker-eval/inlines/eval_joker_low8.h"
+#include "poker-eval/deck_joker.h"
+#include "poker-eval/rules_joker.h"
 
 int 
 testJokerDeck(const char *handstr) {
@@ -141,9 +141,9 @@ testJokerDeck(const char *handstr) {
 
 #ifdef TEST_ASTUD
 
-#include "deck_astud.h"
-#include "rules_astud.h"
-#include "inlines/eval_astud.h"	/* must come after above!? */
+#include "poker-eval/deck_astud.h"
+#include "poker-eval/rules_astud.h"
+#include "poker-eval/inlines/eval_astud.h"	/* must come after above!? */
 
 int 
 testAStudDeck(const char *handstr) {
@@ -181,9 +181,9 @@ testAStudDeck(const char *handstr) {
 #endif
 
 #ifdef TEST_OMAHA8
-#include "inlines/eval_omaha.h"
-#include "deck_std.h"
-#include "rules_std.h"
+#include "poker-eval/inlines/eval_omaha.h"
+#include "poker-eval/deck_std.h"
+#include "poker-eval/rules_std.h"
 
 int 
 testOmaha8(const char *holestr, const char *boardstr) {
