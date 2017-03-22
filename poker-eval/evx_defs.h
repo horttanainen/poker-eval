@@ -45,11 +45,11 @@ enum {
   EvxHandVal_STFLUSH   = EvxHandVal_HANDTYPE_VALUE(StdRules_HandType_STFLUSH),
 };
 
-POKEREVAL_EXPORT uint32 evxPairValueTable[StdDeck_N_RANKMASKS];
-POKEREVAL_EXPORT uint32 evxTripsValueTable[StdDeck_N_RANKMASKS];
-POKEREVAL_EXPORT uint32 evxStrValueTable[StdDeck_N_RANKMASKS];
-POKEREVAL_EXPORT uint32 evxFlushCardsTable[StdDeck_N_RANKMASKS];
+extern POKEREVAL_EXPORT uint32 evxPairValueTable[StdDeck_N_RANKMASKS];
+extern POKEREVAL_EXPORT uint32 evxTripsValueTable[StdDeck_N_RANKMASKS];
+extern POKEREVAL_EXPORT uint32 evxStrValueTable[StdDeck_N_RANKMASKS];
+extern POKEREVAL_EXPORT uint32 evxFlushCardsTable[StdDeck_N_RANKMASKS];
 
-POKEREVAL_EXPORT HandVal EvxHandVal_toHandVal(EvxHandVal ehv);
+extern POKEREVAL_EXPORT HandVal EvxHandVal_toHandVal(EvxHandVal ehv);
 
 #endif

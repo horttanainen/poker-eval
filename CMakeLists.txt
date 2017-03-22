@@ -33,9 +33,9 @@ add_subdirectory(
     poker-eval
     )
 
-add_subdirectory(
-    examples
-    )
+#add_subdirectory(
+#examples
+#)
 
 #add_subdirectory(
 #tests

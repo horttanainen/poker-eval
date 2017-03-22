@@ -49,7 +49,7 @@ MakeTable_begin(const char *tableName,
   gHeaderDone = 0;
 
   strcpy(fnBuf, fileName);
-  strcat(fnBuf, ".c");
+  strcat(fnBuf, ".cpp");
   gCFile = fopen(fnBuf, "w");
   if (!gCFile) 
     fprintf(stderr, "Could not open %s for writing\n", fnBuf);

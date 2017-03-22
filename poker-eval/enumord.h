@@ -135,7 +135,7 @@ typedef struct {
   unsigned int *hist;	/* has nenetries elements */
 } enum_ordering_t;
 
-POKEREVAL_EXPORT int enum_nbits[ENUM_ORDERING_MAXPLAYERS+1];
+extern POKEREVAL_EXPORT int enum_nbits[ENUM_ORDERING_MAXPLAYERS+1];
 POKEREVAL_EXPORT void enum_ordering_rank(HandVal *hands, int noqual,
                                int nplayers, int *ranks, int reverse);
 

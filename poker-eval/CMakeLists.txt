@@ -2,46 +2,46 @@ project(poker-eval)
 
 set(
     BASIC_TABLES
-    ${CMAKE_CURRENT_BINARY_DIR}/t_nbits.c
-    ${CMAKE_CURRENT_BINARY_DIR}/t_topbit.c 
-    ${CMAKE_CURRENT_BINARY_DIR}/t_topcard.c 
-    ${CMAKE_CURRENT_BINARY_DIR}/t_topfivecards.c 
-    ${CMAKE_CURRENT_BINARY_DIR}/t_topfivebits.c
-    ${CMAKE_CURRENT_BINARY_DIR}/t_toptwobits.c 
-    ${CMAKE_CURRENT_BINARY_DIR}/t_cardmasks.c 
-    ${CMAKE_CURRENT_BINARY_DIR}/t_maskrank.c 
-    ${CMAKE_CURRENT_BINARY_DIR}/t_straight.c 
+    ${CMAKE_CURRENT_BINARY_DIR}/t_nbits.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/t_topbit.cpp 
+    ${CMAKE_CURRENT_BINARY_DIR}/t_topcard.cpp 
+    ${CMAKE_CURRENT_BINARY_DIR}/t_topfivecards.cpp 
+    ${CMAKE_CURRENT_BINARY_DIR}/t_topfivebits.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/t_toptwobits.cpp 
+    ${CMAKE_CURRENT_BINARY_DIR}/t_cardmasks.cpp 
+    ${CMAKE_CURRENT_BINARY_DIR}/t_maskrank.cpp 
+    ${CMAKE_CURRENT_BINARY_DIR}/t_straight.cpp 
     )
 
 set(
     JOKER_TABLES 
-    ${CMAKE_CURRENT_BINARY_DIR}/t_jokercardmasks.c 
-    ${CMAKE_CURRENT_BINARY_DIR}/t_jokerstraight.c
+    ${CMAKE_CURRENT_BINARY_DIR}/t_jokercardmasks.cpp 
+    ${CMAKE_CURRENT_BINARY_DIR}/t_jokerstraight.cpp
     )
 
 set(
     PACKED_TABLES
-    ${CMAKE_CURRENT_BINARY_DIR}/t_nbitsandstr.c
+    ${CMAKE_CURRENT_BINARY_DIR}/t_nbitsandstr.cpp
     )
 
 set(
     EVX_TABLES
-    ${CMAKE_CURRENT_BINARY_DIR}/t_evx_pairval.c 
-    ${CMAKE_CURRENT_BINARY_DIR}/t_evx_strval.c 
-    ${CMAKE_CURRENT_BINARY_DIR}/t_evx_tripsval.c 
-    ${CMAKE_CURRENT_BINARY_DIR}/t_evx_flushcards.c
+    ${CMAKE_CURRENT_BINARY_DIR}/t_evx_pairval.cpp 
+    ${CMAKE_CURRENT_BINARY_DIR}/t_evx_strval.cpp 
+    ${CMAKE_CURRENT_BINARY_DIR}/t_evx_tripsval.cpp 
+    ${CMAKE_CURRENT_BINARY_DIR}/t_evx_flushcards.cpp
     )
 
 set(
     ASTUD_TABLES
-    ${CMAKE_CURRENT_BINARY_DIR}/t_astudcardmasks.c
+    ${CMAKE_CURRENT_BINARY_DIR}/t_astudcardmasks.cpp
     )
 
 set(
     LOWBALL_TABLES
-    ${CMAKE_CURRENT_BINARY_DIR}/t_botfivecards.c 
-    ${CMAKE_CURRENT_BINARY_DIR}/t_botcard.c 
-    ${CMAKE_CURRENT_BINARY_DIR}/t_botfivecardsj.c
+    ${CMAKE_CURRENT_BINARY_DIR}/t_botfivecards.cpp 
+    ${CMAKE_CURRENT_BINARY_DIR}/t_botcard.cpp 
+    ${CMAKE_CURRENT_BINARY_DIR}/t_botfivecardsj.cpp
     )
 
 set(
@@ -56,19 +56,19 @@ set(
 
 file( 
     GLOB POKER_EVAL_SOURCES
-    combinations.c
-    deck.c
-    deck_astud.c
-    deck_joker.c
-    deck_std.c
-    enumerate.c
-    enumord.c
-    evx.c
-    lowball.c
-    rules_astud.c
-    rules_joker.c
-    rules_std.c
-    poker_wrapper.c
+    combinations.cpp
+    deck.cpp
+    deck_astud.cpp
+    deck_joker.cpp
+    deck_std.cpp
+    enumerate.cpp
+    enumord.cpp
+    evx.cpp
+    lowball.cpp
+    rules_astud.cpp
+    rules_joker.cpp
+    rules_std.cpp
+    poker_wrapper.cpp
     )
 
 set(
@@ -119,13 +119,13 @@ set(
 
 file( GLOB
     MKTABLE_HELPERS
-    mktable.c 
-    mktable_utils.c
+    mktable.cpp 
+    mktable_utils.cpp
     )
 
 add_executable(
     mktab_basic
-    mktab_basic.c
+    mktab_basic.cpp
     ${MKTABLE_HELPERS}
     )
 
@@ -138,7 +138,7 @@ add_custom_command(
 
 add_executable(
     mktab_joker
-    mktab_joker.c
+    mktab_joker.cpp
     ${MKTABLE_HELPERS}
     )
 
@@ -151,7 +151,7 @@ add_custom_command(
 
 add_executable(
     mktab_packed
-    mktab_packed.c
+    mktab_packed.cpp
     ${MKTABLE_HELPERS}
     )
 
@@ -164,7 +164,7 @@ add_custom_command(
 
 add_executable(
     mktab_evx
-    mktab_evx.c
+    mktab_evx.cpp
     ${MKTABLE_HELPERS}
     )
 
@@ -177,7 +177,7 @@ add_custom_command(
 
 add_executable(
     mktab_astud
-    mktab_astud.c
+    mktab_astud.cpp
     ${MKTABLE_HELPERS}
     )
 
@@ -190,7 +190,7 @@ add_custom_command(
 
 add_executable(
     mktab_lowball
-    mktab_lowball.c
+    mktab_lowball.cpp
     ${MKTABLE_HELPERS}
     )
 
@@ -203,7 +203,7 @@ add_custom_command(
 
 add_executable(
     evx_gen5
-    evx_generate.c
+    evx_generate.cpp
     )
 
 target_compile_options(
@@ -213,7 +213,7 @@ target_compile_options(
 
 add_executable(
     evx_gen7
-    evx_generate.c
+    evx_generate.cpp
     )
 
 target_compile_options(

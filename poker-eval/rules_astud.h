@@ -49,10 +49,10 @@
   | (1 << AStudDeck_Rank_9 ) \
   | (1 << AStudDeck_Rank_TEN ))
 
-POKEREVAL_EXPORT const char *AStudRules_handTypeNames[AStudRules_HandType_LAST+1];
-POKEREVAL_EXPORT const char *AStudRules_handTypeNamesPadded[AStudRules_HandType_LAST+1];
+extern POKEREVAL_EXPORT const char *AStudRules_handTypeNames[AStudRules_HandType_LAST+1];
+extern POKEREVAL_EXPORT const char *AStudRules_handTypeNamesPadded[AStudRules_HandType_LAST+1];
 
-POKEREVAL_EXPORT int AStudRules_nSigCards[AStudRules_HandType_LAST + 1];
+extern POKEREVAL_EXPORT int AStudRules_nSigCards[AStudRules_HandType_LAST + 1];
 POKEREVAL_EXPORT int AStudRules_HandVal_toString(HandVal handval, char *outString);
 POKEREVAL_EXPORT int AStudRules_HandVal_print(HandVal handval);
 

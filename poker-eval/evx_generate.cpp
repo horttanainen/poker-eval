@@ -76,7 +76,7 @@ main (int argc, char** argv)
       fprintf (stderr, "Usage: %s path/evx_preamble.cfrag\n", argv[0]);
       return -1;
   }
-  frag_path = malloc (strlen (argv[1]) + 1 + strlen (PREAMBLE_FRAG) + 1);
+  frag_path = (char*)malloc (strlen (argv[1]) + 1 + strlen (PREAMBLE_FRAG) + 1);
   sprintf(frag_path, "%s/" PREAMBLE_FRAG, argv[1]);
   
   /* Copy the preamble to stdout. */
@@ -91,7 +91,7 @@ main (int argc, char** argv)
     char *p;
 
     fstat (fileno(fp), &sbuf);
-    p = malloc(sbuf.st_size + 1);
+    p = (char*) malloc(sbuf.st_size + 1);
     (void)fread (p, sbuf.st_size, 1, fp);
     p[sbuf.st_size] = 0;
     printf (p, CARDS_DEALT);
