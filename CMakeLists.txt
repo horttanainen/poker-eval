@@ -7,6 +7,8 @@ add_definitions(
     -DHAVE_CONFIG_H
     )
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/runtime_output)
+
 add_compile_options(
     $<$<OR:$<CXX_COMPILER_ID:GNU>,$<C_COMPILER_ID:GNU>>:"-Wall -Wpointer-arith -Wstrict-prototypes">
     )

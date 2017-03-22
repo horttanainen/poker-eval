@@ -1,4 +1,4 @@
-project(libpoker)
+project(poker-eval)
 
 set(
     BASIC_TABLES
@@ -72,14 +72,20 @@ file(
     )
 
 set(
-    LIBPOKER_SOURCE_FILES
+    POKER_EVAL_SOURCES_WITH_LOOKUPS
     ${POKER_EVAL_SOURCES}
     ${TABLES}
     )
 
 file( 
-    GLOB_RECURSE LIBPOKER_INCLUDE_FILES
+    GLOB_RECURSE POKER_EVAL_INCLUDE_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/*.h
+    )
+
+list(
+    REMOVE_ITEM 
+    POKER_EVAL_INCLUDE_FILES 
+    ${CMAKE_CURRENT_SOURCE_DIR}/mktable.h
     )
 
 include_directories(
@@ -89,8 +95,8 @@ include_directories(
 
 add_library(
     ${PROJECT_NAME} SHARED
-    ${LIBPOKER_INCLUDE_FILES}
-    ${LIBPOKER_SOURCE_FILES}
+    ${POKER_EVAL_INCLUDE_FILES}
+    ${POKER_EVAL_SOURCES_WITH_LOOKUPS}
     )
 
 include (GenerateExportHeader)

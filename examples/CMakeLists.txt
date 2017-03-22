@@ -1,7 +1,7 @@
 project(examples)
 
 include_directories(
-    ${libpoker_INCLUDE_DIRS}
+    ${poker-eval_INCLUDE_DIRS}
     )
 
 add_executable(
@@ -11,7 +11,7 @@ add_executable(
 
 target_link_libraries(
     eval
-    libpoker
+    poker-eval
     )
 
 add_executable(
@@ -21,7 +21,7 @@ add_executable(
 
 target_link_libraries(
     fish
-    libpoker
+    poker-eval
     )
 
 add_executable(
@@ -32,7 +32,7 @@ add_executable(
 
 target_link_libraries(
     five_card_hands
-    libpoker
+    poker-eval
     )
 
 add_executable(
@@ -42,7 +42,7 @@ add_executable(
 
 target_link_libraries(
     hcmp2
-    libpoker
+    poker-eval
     )
 
 add_executable(
@@ -52,7 +52,7 @@ add_executable(
 
 target_link_libraries(
     hcmpn
-    libpoker
+    poker-eval
     )
 
 add_executable(
@@ -62,7 +62,7 @@ add_executable(
 
 target_link_libraries(
     pokenum
-    libpoker
+    poker-eval
     )
 
 add_executable(
@@ -72,7 +72,7 @@ add_executable(
 
 target_link_libraries(
     seven_card_hands
-    libpoker
+    poker-eval
     )
 
 add_executable(
@@ -82,6 +82,6 @@ add_executable(
 
 target_link_libraries(
     usedecks
-    libpoker
+    poker-eval
     )
 
