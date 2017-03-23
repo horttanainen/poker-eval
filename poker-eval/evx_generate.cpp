@@ -80,7 +80,7 @@ main (int argc, char** argv)
   sprintf(frag_path, "%s/" PREAMBLE_FRAG, argv[1]);
   
   /* Copy the preamble to stdout. */
-  fp = fopen (frag_path, "r");
+  fp = fopen (frag_path, "rb");
   if (fp == NULL) {
       fprintf (stderr, "Unable to read %s\n", frag_path);
       return -1;
