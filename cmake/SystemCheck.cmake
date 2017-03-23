@@ -30,7 +30,7 @@ endif()
 FOREACH(KEYWORD "inline" "__inline__" "__inline")
     IF(NOT DEFINED C_INLINE)
         TRY_COMPILE(C_HAS_${KEYWORD} "${CMAKE_BINARY_DIR}"
-            "${CMAKE_SOURCE_DIR}/cmake/test_inline.c"
+            "${CMAKE_CURRENT_SOURCE_DIR}/cmake/test_inline.c"
             COMPILE_DEFINITIONS "-Dinline=${KEYWORD}")
         IF(C_HAS_${KEYWORD})
             SET(C_INLINE TRUE)

@@ -89,8 +89,8 @@ list(
     )
 
 include_directories(
-    ${CMAKE_SOURCE_DIR}
-    ${CMAKE_BINARY_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/..
+    ${CMAKE_CURRENT_BINARY_DIR}/..
     )
 
 add_library(
@@ -110,10 +110,16 @@ generate_export_header(
 #PROPERTIES LINKER_LANGUAGE CXX
 #)
 
+set_target_properties(
+    ${PROJECT_NAME}
+    PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/runtime_output"
+    )
+
 set(
     ${PROJECT_NAME}_INCLUDE_DIRS
-    ${CMAKE_SOURCE_DIR}
-    ${CMAKE_BINARY_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/..
+    ${CMAKE_CURRENT_BINARY_DIR}/..
     CACHE INTERNAL "${PROJECT_NAME}: Include Directories" FORCE
     )
 

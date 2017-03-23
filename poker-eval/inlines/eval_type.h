@@ -35,7 +35,7 @@
    Bit 1:   is_straight
    Bit 2-6: n_bits
 */
-uint8 nBitsAndStrTable[StdDeck_N_RANKMASKS];
+extern uint8 nBitsAndStrTable[StdDeck_N_RANKMASKS];
 
 static inline int 
 StdDeck_StdRules_EVAL_TYPE( StdDeck_CardMask cards, int n_cards )
