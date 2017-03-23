@@ -50,7 +50,7 @@ MakeTable_begin(const char *tableName,
 
   strcpy(fnBuf, fileName);
   strcat(fnBuf, ".c");
-  gCFile = fopen(fnBuf, "w");
+  gCFile = fopen(fnBuf, "wb");
   if (!gCFile) 
     fprintf(stderr, "Could not open %s for writing\n", fnBuf);
   else {
