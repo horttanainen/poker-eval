@@ -45,7 +45,8 @@
 
 static inline int
 StdDeck_OmahaHiLow8_EVAL(StdDeck_CardMask hole, StdDeck_CardMask board,
-                         HandVal *hival, LowHandVal *loval) {
+                         HandVal *hival, LowHandVal *loval,
+                         StdDeck_CardMask *highHandOut = nullptr) {
   StdDeck_CardMask allcards;
   LowHandVal allval;
   HandVal curhi, besthi;
@@ -109,8 +110,12 @@ StdDeck_OmahaHiLow8_EVAL(StdDeck_CardMask hole, StdDeck_CardMask board,
             if (hival != NULL) {
               StdDeck_CardMask_OR(n5, n4, board1[b3]);
               curhi = StdDeck_StdRules_EVAL_N(n5, 5);
-              if (curhi > besthi || besthi == HandVal_NOTHING)
-                besthi = curhi;
+              if(curhi > besthi || besthi == HandVal_NOTHING)
+              {
+                  besthi = curhi;
+                  if(highHandOut)
+                      *highHandOut = n5;
+              }
             }
             if (loval != NULL && eligible) {
               curlo = StdDeck_Lowball8_EVAL(n5, 5);
@@ -131,8 +136,8 @@ StdDeck_OmahaHiLow8_EVAL(StdDeck_CardMask hole, StdDeck_CardMask board,
 
 static inline int
 StdDeck_OmahaHi_EVAL(StdDeck_CardMask hole, StdDeck_CardMask board,
-                     HandVal *hival) {
-  return StdDeck_OmahaHiLow8_EVAL(hole, board, hival, NULL);
+                     HandVal *hival, StdDeck_CardMask *highHandOut = nullptr) {
+  return StdDeck_OmahaHiLow8_EVAL(hole, board, hival, NULL, highHandOut);
 }
 
 #endif
