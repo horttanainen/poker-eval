@@ -57,6 +57,11 @@ GenericDeck_printMask(Deck *deck, void *cardMask) {
   return r;
 }
 
+#if defined(_MSC_VER)
+#  define thread __declspec( thread )
+#else
+#  define thread 
+#endif
 
 char *
 GenericDeck_maskString(Deck *deck, void *cardMask) {

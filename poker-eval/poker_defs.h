@@ -27,9 +27,9 @@
 
 #if defined(_MSC_VER)
 #  define UINT64_TYPE unsigned __int64
-#  define thread __declspec( thread )
+//#  define thread __declspec( thread )
 #else
-#  define thread 
+//#  define thread 
 #endif
 #  include "poker-eval/poker_config.h"
 
