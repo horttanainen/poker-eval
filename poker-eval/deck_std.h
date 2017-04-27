@@ -66,7 +66,7 @@
 
 typedef uint32 StdDeck_RankMask;
 
-typedef union {
+union StdDeckUnion {
 #ifdef USE_INT64
   uint64  cards_n;
 #else
@@ -106,7 +106,9 @@ typedef union {
     uint32         : 3;
 #endif
   } cards;
-} StdDeck_CardMask;
+};
+
+typedef StdDeckUnion StdDeck_CardMask;
 
 #define StdDeck_CardMask_SPADES(cm)   ((cm).cards.spades)
 #define StdDeck_CardMask_CLUBS(cm)    ((cm).cards.clubs)
