@@ -11,6 +11,10 @@ add_compile_options(
     $<$<OR:$<CXX_COMPILER_ID:GNU>,$<C_COMPILER_ID:GNU>>:"-Wall -Wpointer-arith -Wstrict-prototypes">
     )
 
+add_compile_options(
+    $<$<CXX_COMPILER_ID:MSVC>:/wd4996>
+    )
+	
 include( cmake/SystemCheck.cmake )
 configure_file(
     poker-eval/config.h.in 
