@@ -776,7 +776,7 @@ enumGameParams(enum_game_t game) {
 
 static void
 enumResultPrintOrdering(enum_result_t *result, int terse) {
-  int i, k;
+  unsigned int i, k;
 
   if (!terse)
     printf("Histogram of relative hand ranks:\n");
@@ -851,7 +851,7 @@ enumResultPrintOrdering(enum_result_t *result, int terse) {
 void
 enumResultPrint(enum_result_t *result, StdDeck_CardMask pockets[],
                 StdDeck_CardMask board) {
-  int i;
+  unsigned int i;
   enum_gameparams_t *gp;
   int width;
 
@@ -934,7 +934,7 @@ enumResultPrint(enum_result_t *result, StdDeck_CardMask pockets[],
 void
 enumResultPrintTerse(enum_result_t *result, StdDeck_CardMask pockets[],
                      StdDeck_CardMask board) {
-  int i;
+  unsigned int i;
 
   printf("EV %d:", result->nplayers);
   for (i=0; i<result->nplayers; i++)
