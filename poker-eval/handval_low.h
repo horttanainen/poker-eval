@@ -69,8 +69,8 @@ typedef uint32 LowHandVal;
  + LowHandVal_FOURTH_CARD_VALUE(StdDeck_Rank_5+1)        \
  + LowHandVal_FIFTH_CARD_VALUE(StdDeck_Rank_4+1))         
 
-POKEREVAL_EXPORT int LowHandVal_toString(LowHandVal hv, char *outString);
-POKEREVAL_EXPORT int LowHandVal_print(LowHandVal handval);
+extern "C" POKEREVAL_EXPORT int LowHandVal_toString(LowHandVal hv, char *outString);
+extern "C" POKEREVAL_EXPORT int LowHandVal_print(LowHandVal handval);
 
 #define Lowball_ROTATE_RANKS(ranks) \
 ((((ranks) & ~(1 << StdDeck_Rank_ACE)) << 1) \

@@ -96,23 +96,23 @@ typedef struct {
   enum_ordering_t *ordering;	/* detailed relative hand rank ordering */
 } enum_result_t;  
 
-POKEREVAL_EXPORT void enumResultPrint(enum_result_t *result, StdDeck_CardMask pockets[],
+extern "C" POKEREVAL_EXPORT void enumResultPrint(enum_result_t *result, StdDeck_CardMask pockets[],
                      StdDeck_CardMask board);
-POKEREVAL_EXPORT void enumResultPrintTerse(enum_result_t *result,
+extern "C" POKEREVAL_EXPORT void enumResultPrintTerse(enum_result_t *result,
                           StdDeck_CardMask pockets[],
                           StdDeck_CardMask board);
-POKEREVAL_EXPORT void enumResultClear(enum_result_t *result);
-POKEREVAL_EXPORT void enumResultFree(enum_result_t *result);
-POKEREVAL_EXPORT int enumResultAlloc(enum_result_t *result, int nplayers,
+extern "C" POKEREVAL_EXPORT void enumResultClear(enum_result_t *result);
+extern "C" POKEREVAL_EXPORT void enumResultFree(enum_result_t *result);
+extern "C" POKEREVAL_EXPORT int enumResultAlloc(enum_result_t *result, int nplayers,
                     enum_ordering_mode_t mode);
-POKEREVAL_EXPORT int enumExhaustive(enum_game_t game, StdDeck_CardMask pockets[],
+extern "C" POKEREVAL_EXPORT int enumExhaustive(enum_game_t game, StdDeck_CardMask pockets[],
                           StdDeck_CardMask board, StdDeck_CardMask dead,
                           int npockets, int nboard, int orderflag,
                           enum_result_t *result);
-POKEREVAL_EXPORT int enumSample(enum_game_t game, StdDeck_CardMask pockets[],
+extern "C" POKEREVAL_EXPORT int enumSample(enum_game_t game, StdDeck_CardMask pockets[],
                       StdDeck_CardMask board, StdDeck_CardMask dead,
                       int npockets, int nboard, int niter, int orderflag,
                       enum_result_t *result);
-POKEREVAL_EXPORT enum_gameparams_t *enumGameParams(enum_game_t game);
+extern "C" POKEREVAL_EXPORT enum_gameparams_t *enumGameParams(enum_game_t game);
 
 #endif

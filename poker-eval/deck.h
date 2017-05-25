@@ -66,17 +66,17 @@ typedef struct {
 #define DnumCards(d, m) (GenericDeck_numCards(&(d), ((void *) &(m))))
 #define DmaskToString(d, m, s) (GenericDeck_maskString(&(d), ((void *) &(m)), (s)))
 
-POKEREVAL_EXPORT char *
+extern "C" POKEREVAL_EXPORT char *
 GenericDeck_cardString(Deck *deck, int cardIndex);
-POKEREVAL_EXPORT int 
+extern "C" POKEREVAL_EXPORT int 
 GenericDeck_printMask(Deck *deck, void *cardMask);
-POKEREVAL_EXPORT int
+extern "C" POKEREVAL_EXPORT int
 GenericDeck_maskToString(Deck *deck, void *cardMask, char *outString);
-POKEREVAL_EXPORT char *
+extern "C" POKEREVAL_EXPORT char *
 GenericDeck_maskString(Deck *deck, void *cardMask);
-POKEREVAL_EXPORT int
+extern "C" POKEREVAL_EXPORT int
 GenericDeck_printCard(Deck *deck, int cardIndex);
-POKEREVAL_EXPORT int
+extern "C" POKEREVAL_EXPORT int
 GenericDeck_numCards(Deck *deck, void *cardMask);
 
 /* These are required by the ENUMERATE_ macros */

@@ -49,13 +49,13 @@
   | (1 << StdDeck_Rank_4 ) \
   | (1 << StdDeck_Rank_5 ))
 
-extern POKEREVAL_EXPORT const char *StdRules_handTypeNames[StdRules_HandType_LAST+1];
-extern POKEREVAL_EXPORT const char *StdRules_handTypeNamesPadded[StdRules_HandType_LAST+1];
+extern "C" POKEREVAL_EXPORT const char *StdRules_handTypeNames[StdRules_HandType_LAST+1];
+extern "C" POKEREVAL_EXPORT const char *StdRules_handTypeNamesPadded[StdRules_HandType_LAST+1];
 
-extern POKEREVAL_EXPORT int StdRules_nSigCards[StdRules_HandType_LAST+1];
+extern "C" POKEREVAL_EXPORT int StdRules_nSigCards[StdRules_HandType_LAST+1];
 
-POKEREVAL_EXPORT int StdRules_HandVal_toString(HandVal handval, char *outString); 
-POKEREVAL_EXPORT int StdRules_HandVal_print(HandVal handval);
+extern "C" POKEREVAL_EXPORT int StdRules_HandVal_toString(HandVal handval, char *outString); 
+extern "C" POKEREVAL_EXPORT int StdRules_HandVal_print(HandVal handval);
 
 #endif
 

@@ -166,12 +166,12 @@ do {                                              \
   JokerDeck_CardMask_OR((mask), (mask), _t1);     \
 } while (0)
 
-extern POKEREVAL_EXPORT JokerDeck_CardMask JokerDeck_cardMasksTable[JokerDeck_N_CARDS];
+extern "C" POKEREVAL_EXPORT JokerDeck_CardMask JokerDeck_cardMasksTable[JokerDeck_N_CARDS];
 
-extern POKEREVAL_EXPORT uint8 jokerStraightTable[StdDeck_N_RANKMASKS];
+extern "C" POKEREVAL_EXPORT uint8 jokerStraightTable[StdDeck_N_RANKMASKS];
 
-POKEREVAL_EXPORT int JokerDeck_cardToString(int cardIndex, char *outString);
-POKEREVAL_EXPORT int JokerDeck_stringToCard(char *inString, int *outCard);
+extern "C" POKEREVAL_EXPORT int JokerDeck_cardToString(int cardIndex, char *outString);
+extern "C" POKEREVAL_EXPORT int JokerDeck_stringToCard(char *inString, int *outCard);
 
 #define JokerDeck_cardString(i) GenericDeck_cardString(&JokerDeck, (i))
 #define JokerDeck_printCard(i)  GenericDeck_printCard(&JokerDeck, (i))
@@ -180,7 +180,7 @@ POKEREVAL_EXPORT int JokerDeck_stringToCard(char *inString, int *outCard);
 #define JokerDeck_numCards(m) GenericDeck_numCards(&JokerDeck, ((void *) &(m)))
 #define JokerDeck_maskToString(m, s) GenericDeck_maskToString(&JokerDeck, ((void *) &(m)), (s))
 
-extern POKEREVAL_EXPORT Deck JokerDeck;
+extern "C" POKEREVAL_EXPORT Deck JokerDeck;
 
 #endif
 

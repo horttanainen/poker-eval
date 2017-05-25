@@ -93,12 +93,12 @@ do {                                            \
   AStudDeck_CardMask_OR((mask), (mask), _t1);             \
 } while (0)
 
-extern POKEREVAL_EXPORT AStudDeck_CardMask AStudDeck_cardMasksTable[AStudDeck_N_CARDS];
-extern POKEREVAL_EXPORT const char AStudDeck_rankChars[AStudDeck_Rank_LAST+2];
-extern POKEREVAL_EXPORT const char AStudDeck_suitChars[AStudDeck_Suit_LAST+2];
+extern "C" POKEREVAL_EXPORT AStudDeck_CardMask AStudDeck_cardMasksTable[AStudDeck_N_CARDS];
+extern "C" POKEREVAL_EXPORT const char AStudDeck_rankChars[AStudDeck_Rank_LAST+2];
+extern "C" POKEREVAL_EXPORT const char AStudDeck_suitChars[AStudDeck_Suit_LAST+2];
 
-POKEREVAL_EXPORT int AStudDeck_cardToString(int cardIndex, char *outString);
-POKEREVAL_EXPORT int AStudDeck_stringToCard(char *inString, int *outCard);
+extern "C" POKEREVAL_EXPORT int AStudDeck_cardToString(int cardIndex, char *outString);
+extern "C" POKEREVAL_EXPORT int AStudDeck_stringToCard(char *inString, int *outCard);
 
 #define AStudDeck_cardString(i) GenericDeck_cardString(&AStudDeck, (i))
 #define AStudDeck_printCard(i)  GenericDeck_printCard(&AStudDeck, (i))
@@ -107,7 +107,7 @@ POKEREVAL_EXPORT int AStudDeck_stringToCard(char *inString, int *outCard);
 #define AStudDeck_numCards(m) GenericDeck_numCards(&AStudDeck, ((void *) &(m)))
 #define AStudDeck_maskToString(m, s) GenericDeck_maskToString(&AStudDeck, ((void *) &(m)), (s))
 
-extern POKEREVAL_EXPORT Deck AStudDeck;
+extern "C" POKEREVAL_EXPORT Deck AStudDeck;
 
 #endif
 

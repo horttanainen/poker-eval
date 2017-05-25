@@ -135,8 +135,8 @@ typedef struct {
   unsigned int *hist;	/* has nenetries elements */
 } enum_ordering_t;
 
-extern POKEREVAL_EXPORT int enum_nbits[ENUM_ORDERING_MAXPLAYERS+1];
-POKEREVAL_EXPORT void enum_ordering_rank(HandVal *hands, int noqual,
+extern "C" POKEREVAL_EXPORT int enum_nbits[ENUM_ORDERING_MAXPLAYERS+1];
+extern "C" POKEREVAL_EXPORT void enum_ordering_rank(HandVal *hands, int noqual,
                                int nplayers, int *ranks, int reverse);
 
 /* the bit field size for one player's relative hand rank */

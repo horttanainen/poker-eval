@@ -209,31 +209,31 @@ do {                                            	\
   ((mask1).cards_nn.n1 == (mask2).cards_nn.n1 && (mask1).cards_nn.n2 == (mask2).cards_nn.n2)
 #endif
 
-extern POKEREVAL_EXPORT uint8             nBitsTable[StdDeck_N_RANKMASKS];
-extern POKEREVAL_EXPORT uint32     topFiveCardsTable[StdDeck_N_RANKMASKS];
-extern POKEREVAL_EXPORT uint32       topFiveBitTable[StdDeck_N_RANKMASKS];
-extern POKEREVAL_EXPORT uint8           topCardTable[StdDeck_N_RANKMASKS];
-extern POKEREVAL_EXPORT uint32           topBitTable[StdDeck_N_RANKMASKS];
-extern POKEREVAL_EXPORT uint32       topTwoBitsTable[StdDeck_N_RANKMASKS];
-extern POKEREVAL_EXPORT uint32      topFiveBitsTable[StdDeck_N_RANKMASKS];
-extern POKEREVAL_EXPORT uint8          straightTable[StdDeck_N_RANKMASKS];
+extern "C" POKEREVAL_EXPORT uint8             nBitsTable[StdDeck_N_RANKMASKS];
+extern "C" POKEREVAL_EXPORT uint32     topFiveCardsTable[StdDeck_N_RANKMASKS];
+extern "C" POKEREVAL_EXPORT uint32       topFiveBitTable[StdDeck_N_RANKMASKS];
+extern "C" POKEREVAL_EXPORT uint8           topCardTable[StdDeck_N_RANKMASKS];
+extern "C" POKEREVAL_EXPORT uint32           topBitTable[StdDeck_N_RANKMASKS];
+extern "C" POKEREVAL_EXPORT uint32       topTwoBitsTable[StdDeck_N_RANKMASKS];
+extern "C" POKEREVAL_EXPORT uint32      topFiveBitsTable[StdDeck_N_RANKMASKS];
+extern "C" POKEREVAL_EXPORT uint8          straightTable[StdDeck_N_RANKMASKS];
 /*
 #ifdef __cplusplus
 }
 #endif
 */
-extern POKEREVAL_EXPORT uint32  bottomFiveCardsTable[StdDeck_N_RANKMASKS];
-extern POKEREVAL_EXPORT uint32  bottomFiveJokerTable[StdDeck_N_RANKMASKS];
-extern POKEREVAL_EXPORT uint8        bottomCardTable[StdDeck_N_RANKMASKS];
+extern "C" POKEREVAL_EXPORT uint32  bottomFiveCardsTable[StdDeck_N_RANKMASKS];
+extern "C" POKEREVAL_EXPORT uint32  bottomFiveJokerTable[StdDeck_N_RANKMASKS];
+extern "C" POKEREVAL_EXPORT uint8        bottomCardTable[StdDeck_N_RANKMASKS];
 
-extern POKEREVAL_EXPORT StdDeck_CardMask StdDeck_cardMasksTable[StdDeck_N_CARDS];
+extern "C" POKEREVAL_EXPORT StdDeck_CardMask StdDeck_cardMasksTable[StdDeck_N_CARDS];
 
-extern POKEREVAL_EXPORT const char StdDeck_rankChars[StdDeck_Rank_LAST+2];
-extern POKEREVAL_EXPORT const char StdDeck_suitChars[StdDeck_Suit_LAST+2];
+extern "C" POKEREVAL_EXPORT const char StdDeck_rankChars[StdDeck_Rank_LAST+2];
+extern "C" POKEREVAL_EXPORT const char StdDeck_suitChars[StdDeck_Suit_LAST+2];
 
-POKEREVAL_EXPORT int StdDeck_cardToString(int cardIndex, char *outString);
-POKEREVAL_EXPORT int StdDeck_stringToCard(char *inString, int *outCard);
-POKEREVAL_EXPORT int StdDeck_maskToCards(void *cardMask, int cards[]);
+extern "C" POKEREVAL_EXPORT int StdDeck_cardToString(int cardIndex, char *outString);
+extern "C" POKEREVAL_EXPORT int StdDeck_stringToCard(char *inString, int *outCard);
+extern "C" POKEREVAL_EXPORT int StdDeck_maskToCards(void *cardMask, int cards[]);
 
 #define StdDeck_cardString(i) GenericDeck_cardString(&StdDeck, (i))
 #define StdDeck_printCard(i)  GenericDeck_printCard(&StdDeck, (i))
@@ -242,7 +242,7 @@ POKEREVAL_EXPORT int StdDeck_maskToCards(void *cardMask, int cards[]);
 #define StdDeck_numCards(m) GenericDeck_numCards(&StdDeck, ((void *) &(m)))
 #define StdDeck_maskToString(m, s) GenericDeck_maskToString(&StdDeck, ((void *) &(m)), (s))
 
-extern POKEREVAL_EXPORT Deck StdDeck;
+extern "C" POKEREVAL_EXPORT Deck StdDeck;
 
 
 #endif

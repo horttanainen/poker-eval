@@ -29,9 +29,9 @@
 
 typedef void *Combinations;
 
-POKEREVAL_EXPORT void free_combinations(Combinations c);
-POKEREVAL_EXPORT Combinations init_combinations(int nuniv, int nelem);
-POKEREVAL_EXPORT int num_combinations(Combinations c);
-POKEREVAL_EXPORT void get_combination(Combinations c, int cnum, int *elems);
+extern "C" POKEREVAL_EXPORT void free_combinations(Combinations c);
+extern "C" POKEREVAL_EXPORT Combinations init_combinations(int nuniv, int nelem);
+extern "C" POKEREVAL_EXPORT int num_combinations(Combinations c);
+extern "C" POKEREVAL_EXPORT void get_combination(Combinations c, int cnum, int *elems);
 
 #endif

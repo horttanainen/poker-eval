@@ -50,13 +50,13 @@
   | (1 << StdDeck_Rank_4 ) \
   | (1 << StdDeck_Rank_5 ))
 
-extern POKEREVAL_EXPORT const char *JokerRules_handTypeNames[JokerRules_HandType_LAST+1];
-extern POKEREVAL_EXPORT const char *JokerRules_handTypeNamesPadded[JokerRules_HandType_LAST+1];
+extern "C" POKEREVAL_EXPORT const char *JokerRules_handTypeNames[JokerRules_HandType_LAST+1];
+extern "C" POKEREVAL_EXPORT const char *JokerRules_handTypeNamesPadded[JokerRules_HandType_LAST+1];
 
-extern POKEREVAL_EXPORT int JokerRules_nSigCards[JokerRules_HandType_LAST+1];
+extern "C" POKEREVAL_EXPORT int JokerRules_nSigCards[JokerRules_HandType_LAST+1];
 
-POKEREVAL_EXPORT int JokerRules_HandVal_toString(HandVal handval, char *outString); 
-POKEREVAL_EXPORT int JokerRules_HandVal_print(HandVal handval);
+extern "C" POKEREVAL_EXPORT int JokerRules_HandVal_toString(HandVal handval, char *outString); 
+extern "C" POKEREVAL_EXPORT int JokerRules_HandVal_print(HandVal handval);
 
 #endif
 
